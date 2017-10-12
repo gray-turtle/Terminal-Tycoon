@@ -21,8 +21,8 @@ def lose():
 
 #funds
 money_amount = 100
-bits_amount = 100
-bytes_amount = 100
+bits_amount = 0
+bytes_amount = 0
 
 #number of currently operating workers
 miners = 0
@@ -197,7 +197,7 @@ def mine_menu():
             mine_menu()
     elif mine_command == 'help':
         print('Enter \"mine\" to try mining for some bits.')
-        print('Enter \"hire\" to hire a miner for 10 money; a miner mines 1 bit every 10 seconds and costs 10 money every minute.')
+        print('Enter \"hire\" to hire a miner for 10 money; a miner mines 2 bits every 10 seconds and costs 10 money every minute.')
         print('Enter \"main\" to return to the main menu.')
         print('Enter \"help\" to see this text again.')
         mine_menu()
@@ -277,6 +277,10 @@ def factory_menu():
         print('Enter \"hire\" to hire a factory worker for 15 money. Factory workers synthesize 1 byte every 20 seconds and cost 10 money per minute!')
         print('Enter \"main\" to return to the main menu.')
         print('Enter \"help\" to see this text again.')
+    elif factory_command == 'mine':
+        mine_menu()
+    elif factory_command == 'market':
+        market_menu()
     else:
         print('You can enter "help" if you don\'t know what you\'re doing.')
         factory_menu()
@@ -376,6 +380,10 @@ def market_menu():
         print('Enter \"main\" to return to the main menu.')
         print('Enter \"help\" to see this text again.') 
         market_menu()
+    elif market_command == 'mine':
+        mine_menu()
+    elif market_command == 'factory':
+        factory_menu()
     else:
         print('You can enter \"help\" if you don\'t know what you\'re doing.')
         market_menu()
